@@ -1,0 +1,4 @@
+### Managed by Ansible ###
+
+syntax on
+autocmd FileType yaml setlocal ai nu sw=2 ts=2 et

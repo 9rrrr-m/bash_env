@@ -1,0 +1,5 @@
+---
+- name: student.bash_env setting
+  hosts: localhost
+  roles:
+    - student.bash_env
