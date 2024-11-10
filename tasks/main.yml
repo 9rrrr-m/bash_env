@@ -1,12 +1,23 @@
 ---
 # tasks file for student.bash_env
 - name: put away .bashrc
-  ansible.builtin.template:
-    src: templates/bashrc.j2
-    dest: /etc/skel/.bashrc
-    owner: root
-    group: root
-    mode: '0644'
+  block:
+    - name: prompt_color blue
+      ansible.builtin.template:
+        src: templates/bashrc_blue.j2
+        dest: /etc/skel/.bashrc
+        owner: root
+        group: root
+        mode: '0644'
+  rescue:
+    - name: prompt_color other
+      ansible.builtin.template:
+        src: templates/bashrc.j2
+        dest: /etc/skel/.bashrc
+        owner: root
+        group: root
+        mode: '0644'
+  when: prompt_color == 'blue'
 
 - name: put away .bash_profile
   ansible.builtin.copy:
