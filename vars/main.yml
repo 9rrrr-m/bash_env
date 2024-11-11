@@ -1,9 +1,3 @@
 ---
-# vars file for demoweb
-pkg_web: httpd
-pkg_web_https: mod_ssl
-pkg_fw: firewalld
-svc_web: httpd
-svc_fw: firewalld
-fwrule_http: http
-fwrule_https: https
+# vars file for student.bash_env
+default_prompt: '[\u on \h in \W dir]\$ '
